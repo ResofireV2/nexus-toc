@@ -1,0 +1,46 @@
+{
+  "$schema": "https://YOUR-NEXUS-HOST/manifest_schema.json",
+  "manifest_version": 2,
+  "name": "Table of Contents",
+  "slug": "table-of-contents",
+  "version": "0.1.0",
+  "description": "Adds a Table of Contents sidebar widget to posts with H1 and H2 headings.",
+  "author": "ResofireV2",
+  "homepage": "https://github.com/ResofireV2/nexus-toc",
+  "repository": "https://github.com/ResofireV2/nexus-toc",
+  "license": "MIT",
+  "tags": ["navigation", "reading", "content"],
+  "compatible_with": "^0.3.0",
+  "module": "TableOfContents",
+  "js_bundle": "table-of-contents.js",
+  "settings_schema": {},
+  "settings_tabs": [],
+  "hooks": [
+    "post_deleted"
+  ],
+  "routes": [
+    {"path": "/"}
+  ],
+  "right_widgets": [
+    {
+      "id": "toc-widget",
+      "label": "Table of Contents",
+      "priority": 1,
+      "scope": {"corePages": ["post"]}
+    }
+  ],
+  "permissions": [
+    {
+      "key": "can_enable_toc",
+      "label": "Can enable Table of Contents on posts",
+      "default": "admin"
+    }
+  ],
+  "slots": [],
+  "toolbar_buttons": [],
+  "digest_sections": [],
+  "side_data": [],
+  "capabilities": [],
+  "admin_panel": null,
+  "explore": null
+}
