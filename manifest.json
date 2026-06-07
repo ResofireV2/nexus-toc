@@ -13,6 +13,8 @@
   "compatible_with": "^0.3.0",
   "module": "TableOfContents",
   "js_bundle": "table-of-contents.js",
+  "logo_url": "/ext/table-of-contents/assets/logo.webp",
+  "banner_url": "/ext/table-of-contents/assets/banner.webp",
   "settings_schema": {},
   "settings_tabs": [],
   "hooks": [
