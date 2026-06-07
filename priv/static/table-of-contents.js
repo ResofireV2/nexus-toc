@@ -53,10 +53,9 @@
     if (!el) return;
     var container = document.querySelector(".post-content-wrap");
     if (!container) return;
-    // offsetTop is relative to the offsetParent. Since post-content-wrap has
-    // overflow-y: auto and is the scroll container, el.offsetTop gives us
-    // the position within it. Subtract 20px for breathing room at the top.
-    container.scrollTo({ top: el.offsetTop - 20, behavior: "smooth" });
+    // offsetTop is relative to post-content-wrap's scroll container.
+    // Subtract 64px so the heading lands with clear breathing room at the top.
+    container.scrollTo({ top: el.offsetTop - 64, behavior: "smooth" });
   }
 
   // ── Active heading tracker ─────────────────────────────────────────────────
@@ -71,7 +70,7 @@
       if (!container) return;
 
       function onScroll() {
-        var OFFSET = 60; // px — how far from the top before activating
+        var OFFSET = 64; // px — matches the scroll-to offset in scrollToHeading
         var els = headings.map(function (h) { return findHeadingEl(h.text); });
         var active = 0;
         for (var i = 0; i < els.length; i++) {
