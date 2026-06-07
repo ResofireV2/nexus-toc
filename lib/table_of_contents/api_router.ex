@@ -38,7 +38,7 @@ defmodule TableOfContents.ApiRouter do
   post "/toggle" do
     user = conn.assigns[:current_user]
 
-    case Permissions.check("table-of-contents", "can_enable_toc", user) do
+    case Permissions.check("nexus-toc", "can_enable_toc", user) do
       :error ->
         conn
         |> put_resp_content_type("application/json")
